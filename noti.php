@@ -6,7 +6,7 @@ if (!defined("WHMCS"))
 function noti_config() {
     $configarray = array(
     "name" => "Desktop Notifications with Noti",
-    "description" => "This is an open source addon module sample that can be used as a starting point for custom modules - has no function by default",
+    "description" => "",
     "version" => "1.0",
     "author" => "aTech Media",
     "language" => "english",
@@ -18,11 +18,12 @@ function noti_config() {
 
 function noti_activate() {
   $query = "CREATE TABLE IF NOT EXISTS `tblnoti` (
-    `id` int(11) NOT NULL,
+    `id` int(11) NOT NULL AUTO_INCREMENT,
     `adminid` int(11) NOT NULL,
     `access_token` varchar(255) NOT NULL,
+    `permissions` text NOT NULL,
     PRIMARY KEY (`id`)
-  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
+  ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;";
 	$result = mysql_query($query);
 }
 
