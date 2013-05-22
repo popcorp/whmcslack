@@ -80,6 +80,7 @@ function noti_output($vars) {
              <input type="checkbox" name="notification[new_client]" value="1" id="notifications_new_client" '.($permissions['new_client'] == "1" ? "checked" : "").'> <label for="notifications_new_client">New Clients</label><br>
              <input type="checkbox" name="notification[new_invoice]" value="1" id="notifications_new_invoice" '.($permissions['new_invoice'] == "1" ? "checked" : "").'> <label for="notifications_new_invoice">Paid Invoices</label><br>
              <input type="checkbox" name="notification[new_ticket]" value="1" id="notifications_new_ticket" '.($permissions['new_ticket'] == "1" ? "checked" : "").'> <label for="notifications_new_ticket">New Support Ticket</label><br>
+             <input type="checkbox" name="notification[new_update]" value="1" id="notifications_new_update" '.($permissions['new_update'] == "1" ? "checked" : "").'> <label for="notifications_new_update">New Support Ticket Update</label><br>
            </td>
          </tr>
          
