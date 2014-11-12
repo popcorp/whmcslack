@@ -1,6 +1,7 @@
 <?php
 
 function noti_ClientAdd($vars) {
+  global $customadminpath, $CONFIG;
   $application_key = mysql_fetch_array( select_query('tbladdonmodules', 'value', array('module' => 'noti', 'setting' => 'key') ), MYSQL_ASSOC );
   $administrators  = full_query("SELECT `access_token` FROM `tblnoti` WHERE `permissions` LIKE '%new_client%'");
   while($administrator = mysql_fetch_array( $administrators, MYSQL_ASSOC )){
