@@ -1,10 +1,6 @@
 # Slack - WHMCS Integration
 A fork of [atech/noti-whmcs](https://github.com/atech/noti-whmcs)
 
-## DISCLAIMER
-I have not tested the code, as I don't own WHMCS myself. Feel free to open issues if you find bugs.
-
-
 This module will notify you each time a client signs up, pays an invoice or opens a support ticket in WHMCS.
 
 ## Installation

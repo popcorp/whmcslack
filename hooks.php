@@ -1,15 +1,16 @@
 <?php
 
 
-function whmcslack_getConfig()
+function whmcslack_config()
 {
-    $q = select_query('tbladdonmodules', 'value', array('module' => 'whmcslack', 'setting' => 'webhook'));
+    $q = select_query('tbladdonmodules', 'setting, value', array('module' => 'whmcslack'));
     if (mysql_num_rows($q) == 0)
         return null;
     $r = [];
     while ($d = mysql_fetch_array($q)) {
         $r[$d['setting']] = $d['value'];
     }
+    return $r;
 }
 
 function whmcslack_call($webhookUrl, $data)
