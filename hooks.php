@@ -1,7 +1,6 @@
 <?php
 
-
-function whmcslack_config()
+function whmcslack_getconfig()
 {
     $q = select_query('tbladdonmodules', 'setting, value', array('module' => 'whmcslack'));
     if (mysql_num_rows($q) == 0)
@@ -22,7 +21,7 @@ function whmcslack_call($webhookUrl, $data)
 function whmcslack_ClientAdd($vars)
 {
     global $customadminpath, $CONFIG;
-    $conf = whmcslack_config();
+    $conf = whmcslack_getconfig();
     if ($conf == null || empty($conf['webhook']))
         return;
     if (!$conf['new_client'])
@@ -37,7 +36,7 @@ function whmcslack_ClientAdd($vars)
 function whmcslack_InvoicePaid($vars)
 {
     global $customadminpath, $CONFIG;
-    $conf = whmcslack_config();
+    $conf = whmcslack_getconfig();
     if ($conf == null || empty($conf['webhook']))
         return;
     if (!$conf['new_invoice'])
@@ -52,7 +51,7 @@ function whmcslack_InvoicePaid($vars)
 function whmcslack_TicketOpen($vars)
 {
     global $customadminpath, $CONFIG;
-    $conf = whmcslack_config();
+    $conf = whmcslack_getconfig();
     if ($conf == null || empty($conf['webhook']))
         return;
     if (!$conf['new_ticket'])
@@ -67,7 +66,7 @@ function whmcslack_TicketOpen($vars)
 function whmcslack_TicketUserReply($vars)
 {
     global $customadminpath, $CONFIG;
-    $conf = whmcslack_config();
+    $conf = whmcslack_getconfig();
     if ($conf == null || empty($conf['webhook']))
         return;
     if (!$conf['new_update'])
