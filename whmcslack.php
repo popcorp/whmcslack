@@ -8,7 +8,7 @@ function whmcslack_config()
     $configarray = [
         'name' => 'WHMCSlack',
         'description' => 'Receive a Slack notification for major event',
-        'version' => '1.0',
+        'version' => '1.1',
         'author' => 'PunKeel',
         'language' => 'english',
         'fields' => [
@@ -20,6 +20,8 @@ function whmcslack_config()
             'new_ticket' => ['FriendlyName' => 'Alert New Ticket', 'Type' => 'yesno', 'Size' => '25',
                 'Description' => ''],
             'new_update' => ['FriendlyName' => 'Alert Ticket Update', 'Type' => 'yesno', 'Size' => '25',
+                'Description' => ''],
+            'new_update_admin' => ['FriendlyName' => 'Alert Ticket Admin Reply', 'Type' => 'yesno', 'Size' => '25',
                 'Description' => ''],
         ]
     ];
